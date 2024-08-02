@@ -1,5 +1,5 @@
 # creoox-ifc2gltfcxconverter
-Public repository of Creoox &amp; XeoKit convertion Tool
+Public repository of Creoox &amp; XeoKit conversion Tool
 
 ## Compatibility to convert2xkt.js
 https://github.com/xeokit/xeokit-convert
