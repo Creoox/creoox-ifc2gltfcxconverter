@@ -6,7 +6,7 @@ https://github.com/xeokit/xeokit-convert
 
 |  ifc2gltfcxconverter    | convert2xkt.js    |
 |  :---:    | :---:    |
-|  4.33 beta  | 1.1.23   |
+|  4.33   | 1.1.23   |
 |  4.32 beta  | 1.1.23   |
 |  4.30 beta  | 1.1.23   |
 |  4.29 beta  | 1.1.23   |
