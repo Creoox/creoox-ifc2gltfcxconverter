@@ -24,4 +24,4 @@ https://github.com/xeokit/xeokit-convert
 
 
 
-
+You can use the converter for testing without license. The generated glb files will have a watermark. After purchasing a license and adding the license key to the input config file, the watermark is not generated any more.
