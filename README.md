@@ -12,13 +12,34 @@ https://github.com/xeokit/xeokit-convert
 |  4.34.1   | 1.1.23   |
 |  4.34 beta   | 1.1.23   |
 |  4.33   | 1.1.23   |
-|  4.32 beta  | 1.1.23   |
-|  4.30 beta  | 1.1.23   |
-|  4.29 beta  | 1.1.23   |
-|  4.28 beta  | 1.1.23   |
 |  4.27  | 1.1.23   |
-|  4.24 beta | 1.1.23   |
 |  4.16  | 1.1.22   |
+
+
+## Features include:
+-  Extraction of the element tree structure from the IFC model and export as a scene graph, preserving GUIDs to enable metadata linking in XeoKit.
+
+-  Conversion of all geometric representations from IFC to triangle meshes for GPU rendering.
+
+-  Configurable export settings via a configuration file.
+
+-  Filtering to exclude elements by type or GUID.
+
+-  Filtering to include only specified types or GUIDs.
+
+-  Mesh deduplication (compression).
+
+-  Element sorting by type and size to improve mesh compression.
+
+-  File splitting to handle large models efficiently.
+
+-  Metadata export (property sets, element quantities, types, etc.), configurable via the input configuration file.
+
+-  Tested for compatibility with XeoKit.
+
+-  Binary version for Windows and Linux for batch processing of files.
+
+-  Professional support for all sorts of issues which are common with IFC files.
 
 
 
