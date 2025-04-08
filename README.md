@@ -35,6 +35,8 @@ https://github.com/xeokit/xeokit-convert
 
 -  Metadata export (property sets, element quantities, types, etc.), configurable via the input configuration file.
 
+-  Extract group/zone associations from the IFC model, and export them to the meta data JSON file.
+
 -  Tested for compatibility with XeoKit.
 
 -  Binary version for Windows and Linux for batch processing of files.
