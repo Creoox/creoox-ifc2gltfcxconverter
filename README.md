@@ -40,6 +40,8 @@ https://github.com/xeokit/xeokit-convert
 -  Tested for compatibility with XeoKit.
 
 -  Binary version for Windows and Linux for batch processing of files.
+  
+-  Native C++ application, fast and efficient conversion of IFC files.
 
 -  Professional support for all sorts of issues which are common with IFC files.
 
