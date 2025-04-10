@@ -46,6 +46,7 @@ https://github.com/xeokit/xeokit-convert
 -  Professional support for all sorts of issues which are common with IFC files.
 
 
-
+<!-- The converter acts like an adapter to IFC, which hides the complexity of many different geometric representation methods, combined with complex hierarchies of coordinate systems, and boolean operations (CSG) between any of those geometric items.
+The converter exposes the simplest possible common denominator for geometry - points, polygons and triangles.  -->
 
 You can use the converter for testing without license. The generated glb files will have a watermark. After purchasing a license and adding the license key to the input config file, the watermark is not generated any more.
