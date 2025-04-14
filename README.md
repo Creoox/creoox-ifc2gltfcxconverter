@@ -19,7 +19,7 @@ https://github.com/xeokit/xeokit-convert
 ## Features include:
 -  Extraction of the element tree structure from the IFC model and export as a scene graph, preserving GUIDs to enable metadata linking in XeoKit.
 
--  Conversion of all geometric representations from IFC to triangle meshes for GPU rendering.
+-  Conversion of all geometric representations from IFC to points, polylines, triangle meshes and text labels for GPU rendering.
 
 -  Configurable export settings via a configuration file.
 
