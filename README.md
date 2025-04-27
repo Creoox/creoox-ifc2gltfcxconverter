@@ -34,7 +34,7 @@ https://github.com/xeokit/xeokit-convert
 
 -  File splitting to handle large models efficiently.
 
--  Metadata export (property sets, element quantities, types, etc.), configurable via the input configuration file.
+-  Metadata export (property sets, element quantities, types, units, etc.), configurable via the input configuration file.
 
 -  Extract group/zone associations from the IFC model, and export to the meta data JSON file.
 
