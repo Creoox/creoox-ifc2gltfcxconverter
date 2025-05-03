@@ -4,7 +4,7 @@ Public repository of Creoox &amp; XeoKit conversion Tool
 ## Compatibility to convert2xkt.js
 https://github.com/xeokit/xeokit-convert
 
-|  ifc2gltfcxconverter    | convert2xkt.js    |
+|  cxconverter    | convert2xkt.js    |
 |  :---:    | :---:    |
 |  5.1.6   | 1.1.25   |
 |  5.1.3   | 1.1.25   |
