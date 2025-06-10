@@ -6,6 +6,7 @@ https://github.com/xeokit/xeokit-convert
 
 |  cxconverter    | convert2xkt.js    |
 |  :---:    | :---:    |
+|  5.2.6   | 1.1.25   |
 |  5.1.7   | 1.1.25   |
 |  5.1.6   | 1.1.25   |
 |  5.1.3   | 1.1.25   |
