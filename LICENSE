@@ -1,6 +1,6 @@
 Ifc2gltfCxConverter Testing License
 
-Copyright (c) 2024 Creoox AG, https://creoox.com/
+Copyright (c) 2025 Creoox AG, https://creoox.com/
 
 Redistribution and use in binary form, without modification, are permitted provided that the following conditions are met:
 
@@ -11,3 +11,17 @@ Redistribution and use in binary form, without modification, are permitted provi
 3. Neither the name of the Ifc2gltfCxConverter nor the names of its contributors may be used to endorse or promote products derived from this software without specific prior written permission.
 
 THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+---
+Ifc2gltfCxConverter utilizes the following components in executable form with MPL-2.0:
+
+web-ifc
+Copyright (c) 2020-2025 web-ifc contributors
+Link to source code: https://github.com/Creoox/engine_web-ifc
+Mozilla Public License, v. 2.0 [https://www.mozilla.org/en-US/MPL/2.0/]
+
+## 📜 Licensing & Commercial Use
+
+🪧 Need a commercial license? If your company requires cxConverter (Ifc2gltfCxConverter) under a different licensing model for proprietary or closed-source applications, we offer flexible commercial licensing options.
+
+📩 Contact us at contact@creoox.com or visit xeokit.io for more information.
