@@ -57,3 +57,7 @@ https://github.com/xeokit/xeokit-convert
 The converter exposes the simplest possible common denominator for geometry - points, polygons and triangles.  -->
 
 You can use the converter for testing without license. The generated glb files will have a watermark. After purchasing a license and adding the license key to the input config file, the watermark is not generated any more.
+
+
+<img width="2475" height="1276" alt="image" src="https://github.com/user-attachments/assets/8fba68e3-7f34-4a9c-9ef0-8061871e03d1" />
+
