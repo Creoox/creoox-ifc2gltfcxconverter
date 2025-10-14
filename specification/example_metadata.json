@@ -1,0 +1,153 @@
+{
+  "id": "building_project_2024",
+  "projectId": "2hk9fGH$H4Pxj3f8v_Dxg7",
+  "author": "John Doe",
+  "createdAt": "2024-02-19T12:14:41",
+  "schema": "IFC4",
+  "creatingApplication": "Autodesk Revit 2024",
+
+  "properties": [
+    {
+      "name": "LoadBearing",
+      "ifcPropertyType": "IfcPropertySingleValue",
+      "ifcValueType": "IfcBoolean",
+      "value": "True",
+      "valueType": "boolean"
+    },
+    {
+      "name": "Height",
+      "ifcPropertyType": "IfcPropertySingleValue",
+      "ifcValueType": "IfcLengthMeasure",
+      "value": 3.5,
+      "valueType": "number",
+      "unit": 0
+    },
+    {
+      "name": "FireRating",
+      "ifcPropertyType": "IfcPropertySingleValue",
+      "ifcValueType": "IfcLabel",
+      "value": "2 Hour",
+      "valueType": "string"
+    },
+    {
+      "name": "GrossVolume",
+      "ifcPropertyType": "IfcQuantityVolume",
+      "value": 12.5,
+      "valueType": "ElementQuantity",
+      "unit": 3
+    }
+  ],
+
+  "propertySets": [
+    {
+      "id": "3fG7k$Hj2_9Pxd8vD_xg7",
+      "name": "Pset_WallCommon",
+      "type": "IfcPropertySet",
+      "properties": [0, 1, 2]
+    },
+    {
+      "id": "1Wx8mNh3v5RxPd_7kD9xm",
+      "name": "BaseQuantities",
+      "type": "IfcElementQuantity",
+      "properties": [3]
+    }
+  ],
+
+  "units": [
+    {
+      "name": "m",
+      "className": "IfcSIUnit",
+      "unitEnum": "LENGTHUNIT"
+    },
+    {
+      "name": "mm",
+      "className": "IfcSIUnit",
+      "unitEnum": "LENGTHUNIT",
+      "prefix": "MILLI"
+    },
+    {
+      "name": "m2",
+      "className": "IfcSIUnit",
+      "unitEnum": "AREAUNIT"
+    },
+    {
+      "name": "m3",
+      "className": "IfcSIUnit",
+      "unitEnum": "VOLUMEUNIT"
+    },
+    {
+      "name": "degree",
+      "className": "IfcConversionBasedUnit",
+      "unitEnum": "PLANEANGLEUNIT",
+      "conversionFactor": {
+        "valueComponent": {
+          "value": 0.0174532925199433,
+          "valueType": "number",
+          "ifcValueType": "IfcReal"
+        },
+        "unitComponent": 5
+      }
+    },
+    {
+      "name": "rad",
+      "className": "IfcSIUnit",
+      "unitEnum": "PLANEANGLEUNIT"
+    }
+  ],
+
+  "projectUnits": {
+    "LENGTHUNIT": 0,
+    "AREAUNIT": 2,
+    "VOLUMEUNIT": 3,
+    "PLANEANGLEUNIT": 4
+  },
+
+  "metaObjects": [
+    {
+      "id": "2hk9fGH$H4Pxj3f8v_Dxg7",
+      "name": "My Building Project",
+      "type": "IfcProject",
+      "parent": null
+    },
+    {
+      "id": "0vR3kTm8v2VPx_j7D9Hxk",
+      "name": "Site",
+      "type": "IfcSite",
+      "parent": "2hk9fGH$H4Pxj3f8v_Dxg7"
+    },
+    {
+      "id": "1Bx7mKj3v4RxPd_8kD9Hx",
+      "name": "Building A",
+      "type": "IfcBuilding",
+      "parent": "0vR3kTm8v2VPx_j7D9Hxk"
+    },
+    {
+      "id": "3toKckUfH2jBmd$7xKikH0",
+      "name": "Level 1",
+      "longName": "First Floor",
+      "type": "IfcBuildingStorey",
+      "parent": "1Bx7mKj3v4RxPd_8kD9Hx",
+      "attributes": {
+        "elevation": 0.0
+      }
+    },
+    {
+      "id": "1Ri6dAvFvEOxun_An4x7m_",
+      "name": "Basic Wall:Generic - 6\"",
+      "type": "IfcWall",
+      "parent": "3toKckUfH2jBmd$7xKikH0",
+      "ObjectType": "Basic Wall:Generic - 6\"",
+      "tag": "291086",
+      "propertySetIds": ["3fG7k$Hj2_9Pxd8vD_xg7", "1Wx8mNh3v5RxPd_7kD9xm"]
+    },
+    {
+      "id": "2Cx9dGv7r3Nxdk_Bm5Ykj",
+      "name": "M_Single-Flush:36\" x 84\"",
+      "type": "IfcDoor",
+      "parent": "1Ri6dAvFvEOxun_An4x7m_",
+      "ObjectType": "M_Single-Flush:36\" x 84\"",
+      "tag": "291234",
+      "propertySetIds": ["4gH8l$Ik3_0Qye9wE_yh8"]
+    }
+  ]
+}

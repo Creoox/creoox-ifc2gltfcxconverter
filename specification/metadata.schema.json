@@ -1,0 +1,376 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://xeokit.io/schemas/metadata/v2.0.0/schema.json",
+  "title": "xeokit MetaModel Full Schema",
+  "description": "Complete JSON Schema for xeokit metadata files including property sets, units, and groups",
+  "type": "object",
+  "required": ["id", "metaObjects"],
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "Unique identifier for the model"
+    },
+    "projectId": {
+      "type": "string",
+      "description": "Project identifier (e.g., IFC project GUID)"
+    },
+    "author": {
+      "type": "string",
+      "description": "Author of the model or metadata"
+    },
+    "createdAt": {
+      "type": "string",
+      "description": "Creation timestamp in ISO 8601 format (e.g., 2011-09-07T12:28:29)"
+    },
+    "schema": {
+      "type": "string",
+      "description": "Schema version (e.g., 'IFC4', 'IFC2X3')",
+      "enum": ["IFC4", "IFC2X3", "IFC4X3", "custom"]
+    },
+    "creatingApplication": {
+      "type": "string",
+      "description": "Software application that created the model"
+    },
+    "projectUnits": {
+      "type": "object",
+      "description": "Project-wide unit definitions mapping unit types to indices in the units array",
+      "patternProperties": {
+        "^(LENGTHUNIT|AREAUNIT|VOLUMEUNIT|PLANEANGLEUNIT|MASSUNIT|TIMEUNIT|FORCEUNIT|POWERUNIT|PRESSUREUNIT|THERMALTRANSMITTANCEUNIT|ELECTRICCURRENTUNIT|ELECTRICVOLTAGEUNIT|ELECTRICRESISTANCEUNIT|ELECTRICCAPACITANCEUNIT|ELECTRICCHARGEUNIT|ELECTRICCONDUCTANCEUNIT|ENERGYUNIT|FREQUENCYUNIT|ILLUMINANCEUNIT|INDUCTANCEUNIT|LUMINOUSFLUXUNIT|LUMINOUSINTENSITYUNIT|MAGNETICFLUXDENSITYUNIT|MAGNETICFLUXUNIT|RADIOACTIVITYUNIT|SOLIDANGLEUNIT|THERMODYNAMICTEMPERATUREUNIT|ABSORBEDDOSEUNIT|AMOUNTOFSUBSTANCEUNIT|DOSEEQUIVALENTUNIT|USERDEFINED)$": {
+          "type": "integer",
+          "description": "Index reference to unit in the units array",
+          "minimum": 0
+        }
+      },
+      "additionalProperties": false
+    },
+    "properties": {
+      "type": "array",
+      "description": "Global property definitions",
+      "items": {
+        "$ref": "#/definitions/property"
+      }
+    },
+    "propertySets": {
+      "type": "array",
+      "description": "Property set definitions that can be referenced by objects",
+      "items": {
+        "$ref": "#/definitions/propertySet"
+      }
+    },
+    "units": {
+      "type": "array",
+      "description": "Unit definitions from the IFC model",
+      "items": {
+        "$ref": "#/definitions/unit"
+      }
+    },
+    "metaObjects": {
+      "type": "array",
+      "description": "Array of metadata objects representing the model hierarchy",
+      "items": {
+        "$ref": "#/definitions/metaObject"
+      },
+      "minItems": 1
+    },
+    "groups": {
+      "type": "array",
+      "description": "Groups for organizing objects",
+      "items": {
+        "$ref": "#/definitions/group"
+      }
+    }
+  },
+  "definitions": {
+    "property": {
+      "type": "object",
+      "required": ["name"],
+      "properties": {
+        "name": {
+          "type": "string",
+          "description": "Property name"
+        },
+        "value": {
+          "description": "Property value",
+          "anyOf": [
+            {"type": "string"},
+            {"type": "number"},
+            {"type": "boolean"},
+            {"type": "null"}
+          ]
+        },
+        "valueType": {
+          "type": "string",
+          "description": "Semantic value type",
+          "enum": ["string", "number", "boolean", "enumeration", "logical", "array", "PropertySet", "ElementQuantity", "ComplexElementQuantity", "ComplexProperty", "DoorLiningProperties", "DoorPanelProperties", "WindowLiningProperties", "SingleProperty"]
+        },
+        "ifcPropertyType": {
+          "type": "string",
+          "description": "IFC property type",
+          "enum": ["IfcPropertySingleValue", "IfcPropertyEnumeratedValue", "IfcPropertyBoundedValue", "IfcPropertyTableValue", "IfcPropertyReferenceValue", "IfcPropertyListValue", "IfcQuantityArea", "IfcQuantityLength", "IfcQuantityVolume"]
+        },
+        "ifcValueType": {
+          "type": "string",
+          "description": "IFC value type (e.g., IfcLabel, IfcReal, IfcBoolean)"
+        },
+        "unit": {
+          "type": "integer",
+          "description": "Index reference to unit in the units array",
+          "minimum": 0
+        },
+        "properties": {
+          "type": "array",
+          "description": "Array of indices to child properties in the global properties array (for complex properties)",
+          "items": {
+            "type": "integer",
+            "minimum": 0
+          }
+        }
+      }
+    },
+    "propertySet": {
+      "type": "object",
+      "required": ["id", "name", "type"],
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Unique identifier for the property set"
+        },
+        "name": {
+          "type": "string",
+          "description": "Property set name"
+        },
+        "type": {
+          "type": "string",
+          "description": "Property set type",
+          "default": "IfcPropertySet"
+        },
+        "properties": {
+          "type": "array",
+          "description": "Array of indices referring to properties in the global properties array",
+          "items": {
+            "type": "integer",
+            "minimum": 0
+          }
+        }
+      }
+    },
+    "metaObject": {
+      "type": "object",
+      "required": ["id", "type"],
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Unique identifier for the object (e.g., IFC GUID)"
+        },
+        "name": {
+          "type": "string",
+          "description": "Human-readable name of the object"
+        },
+        "type": {
+          "type": "string",
+          "description": "Object type (e.g., 'IfcProject', 'IfcWallStandardCase')"
+        },
+        "parent": {
+          "type": ["string", "null"],
+          "description": "ID of the parent object, or null for root objects"
+        },
+        "longName": {
+          "type": "string",
+          "description": "Long name for spatial elements (IfcSpatialElement.LongName)"
+        },
+        "ObjectType": {
+          "type": "string",
+          "description": "Object type attribute (IfcObject.ObjectType)"
+        },
+        "tag": {
+          "type": "string",
+          "description": "Tag attribute (IfcElement.Tag)"
+        },
+        "attributes": {
+          "type": "object",
+          "description": "Special attributes like elevation for spatial elements",
+          "additionalProperties": true
+        },
+        "propertySetIds": {
+          "type": "array",
+          "description": "Property set IDs associated with this object",
+          "items": {
+            "type": "string"
+          }
+        },
+        "external": {
+          "type": "object",
+          "description": "External references or links",
+          "properties": {
+            "xref": {
+              "type": "string",
+              "description": "External reference identifier"
+            }
+          }
+        },
+        "groups": {
+          "type": "array",
+          "description": "Group IDs this object belongs to",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "group": {
+      "type": "object",
+      "required": ["id", "name"],
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Unique identifier for the group"
+        },
+        "name": {
+          "type": "string",
+          "description": "Group name"
+        },
+        "type": {
+          "type": "string",
+          "description": "Group type",
+          "enum": ["IfcGroup", "IfcSystem", "IfcZone", "custom"]
+        },
+        "description": {
+          "type": "string",
+          "description": "Group description"
+        },
+        "members": {
+          "type": "array",
+          "description": "Object IDs that belong to this group",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "unit": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string",
+          "description": "Unit symbol or name (e.g., 'm', 'mm', 'degree')"
+        },
+        "className": {
+          "type": "string",
+          "description": "IFC unit class name",
+          "enum": ["IfcSIUnit", "IfcConversionBasedUnit", "IfcDerivedUnit", "IfcMonetaryUnit", "IfcContextDependentUnit"]
+        },
+        "unitType": {
+          "type": "string",
+          "description": "Unit type descriptor"
+        },
+        "unitEnum": {
+          "type": "string",
+          "description": "Unit type enum",
+          "enum": [
+            "LENGTHUNIT", "AREAUNIT", "VOLUMEUNIT", "PLANEANGLEUNIT",
+            "MASSUNIT", "TIMEUNIT", "FORCEUNIT", "POWERUNIT", "PRESSUREUNIT",
+            "THERMALTRANSMITTANCEUNIT", "ELECTRICCURRENTUNIT", "ELECTRICVOLTAGEUNIT",
+            "ELECTRICRESISTANCEUNIT", "ELECTRICCAPACITANCEUNIT", "ELECTRICCHARGEUNIT",
+            "ELECTRICCONDUCTANCEUNIT", "ENERGYUNIT", "FREQUENCYUNIT", "ILLUMINANCEUNIT",
+            "INDUCTANCEUNIT", "LUMINOUSFLUXUNIT", "LUMINOUSINTENSITYUNIT",
+            "MAGNETICFLUXDENSITYUNIT", "MAGNETICFLUXUNIT", "RADIOACTIVITYUNIT",
+            "SOLIDANGLEUNIT", "THERMODYNAMICTEMPERATUREUNIT", "ABSORBEDDOSEUNIT",
+            "AMOUNTOFSUBSTANCEUNIT", "DOSEEQUIVALENTUNIT", "USERDEFINED"
+          ]
+        },
+        "prefix": {
+          "type": "string",
+          "description": "SI prefix for IfcSIUnit",
+          "enum": ["ATTO", "CENTI", "DECA", "DECI", "EXA", "FEMTO", "GIGA", "HECTO", "KILO", "MEGA", "MICRO", "MILLI", "NANO", "PETA", "PICO", "TERA"]
+        },
+        "userDefinedType": {
+          "type": "string",
+          "description": "User-defined type string"
+        },
+        "conversionFactor": {
+          "type": "object",
+          "description": "Conversion factor for IfcConversionBasedUnit",
+          "properties": {
+            "valueComponent": {
+              "type": "object",
+              "description": "Value component of conversion",
+              "properties": {
+                "value": {
+                  "type": "number",
+                  "description": "Conversion factor value"
+                },
+                "valueType": {
+                  "type": "string",
+                  "description": "Value type"
+                },
+                "ifcValueType": {
+                  "type": "string",
+                  "description": "IFC value type (e.g., IfcReal)"
+                }
+              },
+              "required": ["value"]
+            },
+            "unitComponent": {
+              "type": "integer",
+              "description": "Index reference to base unit in units array",
+              "minimum": 0
+            }
+          }
+        },
+        "elements": {
+          "type": "array",
+          "description": "Elements for IfcDerivedUnit - combinations of base units",
+          "items": {
+            "type": "object",
+            "properties": {
+              "unit": {
+                "type": "integer",
+                "description": "Index reference to unit in units array",
+                "minimum": 0
+              },
+              "exponent": {
+                "type": "integer",
+                "description": "Exponent value for this unit element"
+              }
+            },
+            "required": ["unit", "exponent"]
+          }
+        },
+        "dimensions": {
+          "type": "object",
+          "description": "IfcDimensionalExponents for derived units",
+          "properties": {
+            "LengthExponent": {
+              "type": "integer",
+              "description": "Length dimension exponent"
+            },
+            "MassExponent": {
+              "type": "integer",
+              "description": "Mass dimension exponent"
+            },
+            "TimeExponent": {
+              "type": "integer",
+              "description": "Time dimension exponent"
+            },
+            "ElectricCurrentExponent": {
+              "type": "integer",
+              "description": "Electric current dimension exponent"
+            },
+            "ThermodynamicTemperatureExponent": {
+              "type": "integer",
+              "description": "Thermodynamic temperature dimension exponent"
+            },
+            "AmountOfSubstanceExponent": {
+              "type": "integer",
+              "description": "Amount of substance dimension exponent"
+            },
+            "LuminousIntensityExponent": {
+              "type": "integer",
+              "description": "Luminous intensity dimension exponent"
+            }
+          }
+        }
+      }
+    }
+  }
+}
