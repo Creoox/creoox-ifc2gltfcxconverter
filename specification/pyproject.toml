@@ -1,0 +1,8 @@
+[project]
+name = "metadata-validator"
+version = "1.0.0"
+description = "Validator for xeokit metadata JSON files"
+requires-python = ">=3.8"
+dependencies = [
+    "jsonschema>=4.0.0",
+]

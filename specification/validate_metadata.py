@@ -52,8 +52,8 @@ def validate_metadata(schema_path, metadata_path):
         return True
 
 if __name__ == "__main__":
-    schema_path = sys.argv[1] if len(sys.argv) > 1 else "specification/metadata.schema.json"
-    metadata_path = sys.argv[2] if len(sys.argv) > 2 else "specification/example_metadata.json"
+    schema_path = sys.argv[1] if len(sys.argv) > 1 else "metadata.schema.json"
+    metadata_path = sys.argv[2] if len(sys.argv) > 2 else "example_metadata.json"
 
     try:
         is_valid = validate_metadata(schema_path, metadata_path)
