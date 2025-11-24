@@ -41,7 +41,7 @@ https://github.com/xeokit/xeokit-convert
 
 -  Extract group/zone associations from the IFC model, and export to the meta data JSON file.
 
--  Visualization of opening elements in IFC models, which are normally not visible in IFC viewers.
+-  Optional visualization of opening elements in IFC models, which are normally not visible in IFC viewers. Enable in input config JSON file.
 
 -  Tested for compatibility with XeoKit.
 
