@@ -48,7 +48,7 @@ https://github.com/xeokit/xeokit-convert
 
 -  Tested for compatibility with XeoKit.
 
--  Binary version for Windows and Linux for batch processing of files.
+-  Binary version for Windows and Linux and ARM for batch processing of files.
   
 -  Native C++ application, fast and efficient conversion of IFC files.
 
