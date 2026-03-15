@@ -63,6 +63,9 @@ You can use the converter for testing without license. The generated glb files w
 
 <img width="2475" height="1276" alt="image" src="https://github.com/user-attachments/assets/8fba68e3-7f34-4a9c-9ef0-8061871e03d1" />
 
+## FAQ
+- [Frequently Asked Questions](./FAQ.md)
+
 ## Metadata and glb node hierarchy specification:
 - [glb node structure](./specification/glTF_Node_Hierarchy_Specification.md)
 - [metadata format description](./specification/Metadata_JSON_Specification.md)
