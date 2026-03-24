@@ -53,7 +53,7 @@ https://github.com/xeokit/xeokit-convert
   
 -  Native C++ application, fast and efficient conversion of IFC files.
 
--  Supported IFC versions: IFC 4.3, plus backwards compatibility to older versions like IFC 2x3.
+-  Supported IFC versions: latest official standard IFC 4.3, plus backwards compatibility to older versions like IFC 2x3. New IFC versions will be supported as soon as they are officially released.
 
 -  Professional support for all sorts of issues which are common with IFC files.
 
