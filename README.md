@@ -51,7 +51,7 @@ https://github.com/xeokit/xeokit-convert
 
 -  Binary version for Windows and Linux and ARM for batch processing of files.
   
--  Native C++ application, fast and efficient conversion of IFC files.
+-  Native C++ application, fast and efficient conversion of IFC files (and .ifczip).
 
 -  Supported IFC versions: latest official standard IFC 4.3, plus backwards compatibility to older versions like IFC 2x3. New IFC versions will be supported as soon as they are officially released.
 
