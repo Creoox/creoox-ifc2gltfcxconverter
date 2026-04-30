@@ -7,6 +7,7 @@ https://github.com/xeokit/xeokit-convert
 |  cxconverter    | convert2xkt.js    |
 |  :---:    | :---:    |
 |  5.9.1 | >=1.3.1   |
+|  5.10.4 | >=1.3.1   |
 |  5.8.14 | >=1.3.1   |
 |  5.7.0 | >=1.3.1   |
 |  5.6.15 | >=1.3.1   |
