@@ -38,6 +38,10 @@ together instead of being treated like closed building solids.
 This is not a generic mesh simplifier. It does not reshape or approximate the visible shell. Instead, it removes geometry that is
 hidden from the outside and keeps the original triangles that are part of the detected outer model.
 
+## Converter version
+
+`5.11.2` and later versions
+
 ## Example Result
 
 The following result compares the Duplex sample (https://github.com/Creoox/engine_web-ifc/blob/develop/tests/ifcfiles/public/duplex.ifc) exported once as a full GLB and once with "extractOuterShape": 1.
@@ -54,8 +58,7 @@ Export with `extractOuterShape` enabled:
 - `test/Duplex_extractOuterShape.json`
 - `test/Duplex_extractOuterShape.manifest.json`
 
-Converter version:
-`5.11.2` and later versions
+
 
 Both exports created `246` metadata objects. The metadata JSON file size is unchanged because the object metadata is preserved.
 The reported bounds are identical for the exported building geometry; `IfcSpace` elements are intentionally omitted from the
