@@ -55,7 +55,7 @@ Export with `extractOuterShape` enabled:
 - `test/Duplex_extractOuterShape.manifest.json`
 
 Converter version:
-`5.11.0` 
+`5.11.2` and later versions
 
 Both exports created `246` metadata objects. The metadata JSON file size is unchanged because the object metadata is preserved.
 The reported bounds are identical for the exported building geometry; `IfcSpace` elements are intentionally omitted from the
