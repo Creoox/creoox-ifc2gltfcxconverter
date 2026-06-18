@@ -125,4 +125,17 @@ Common additions:
 This filter can be combined with `extractOuterShape`: the listed types are excluded regardless of whether they would otherwise
 appear in the outer shape.
 
+**Limitations**
+
+Type-based exclusion is coarse: it removes an entire IFC class, so it only helps when the unwanted geometry maps cleanly to
+its own type. Two common cases where it does not:
+
+- IFC does not distinguish interior from exterior walls by type - both are `IfcWall` (or `IfcWallStandardCase`). Whether a
+  wall is external is carried by a property (`Pset_WallCommon.IsExternal`), not by the type, so you cannot drop only
+  interior walls through this filter.
+- Furniture, vehicles, vegetation, and similar objects are frequently exported under a single generic type, typically
+  `IfcBuildingElementProxy`. Excluding that type removes all of them at once and may also drop unrelated proxy geometry, so it is all-or-nothing rather than selective.
+
+In short, `excludeGeometryForIfcTypes` matches only on the IFC type; distinctions that live in properties or attributes
+(external/internal status, object category) cannot be expressed through it.
 
