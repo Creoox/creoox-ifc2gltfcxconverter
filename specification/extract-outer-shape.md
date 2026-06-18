@@ -89,3 +89,40 @@ The benefit depends on the model. Buildings with many hidden interior surfaces u
 triangle is already visible from outside, such as some stadium or terrain-heavy models, may reduce less or even not at all.
 
 Always visually check the result for new model types before using it in production workflows.
+
+
+## Excluding Geometry By IFC Type
+
+The converter can skip geometry for specific IFC element types during conversion. The configuration ships with
+`IfcOpeningElement` already in the list, which keeps window and door openings from being rendered as solid blocks. You can
+extend this list with any other types you do not need in the exported model, such as piping or ducting, without modifying the
+source IFC.
+
+Add the IFC type names to `excludeGeometryForIfcTypes` in the converter configuration:
+
+```json
+{
+  "inputParameters": {
+    "excludeGeometryForIfcTypes": [ "IfcOpeningElement", "IfcPipeSegment", "IfcPipeFitting" ]
+  }
+}
+```
+
+Each entry is matched against the IFC type of the element. Any element whose type appears in the list is exported without its
+geometry, while its metadata object is still created during conversion. Keep `IfcOpeningElement` in the list unless you have a
+specific reason to render openings; types that are not listed are exported normally.
+
+Common additions:
+
+| IFC type | Typical content |
+|---|---|
+| `IfcOpeningElement` | Voids and openings cut into walls and slabs (included by default) |
+| `IfcPipeSegment`, `IfcPipeFitting` | Pipe runs and fittings |
+| `IfcDuctSegment`, `IfcDuctFitting` | Duct runs and fittings |
+| `IfcFlowSegment`, `IfcFlowFitting` | Generic MEP flow segments and fittings (IFC2x3) |
+| `IfcFurnishingElement` | Furniture and loose fittings |
+
+This filter can be combined with `extractOuterShape`: the listed types are excluded regardless of whether they would otherwise
+appear in the outer shape.
+
+
