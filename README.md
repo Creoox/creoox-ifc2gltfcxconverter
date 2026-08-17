@@ -1,5 +1,5 @@
 # cxconverter
-Public repository of Creoox &amp; XeoKit conversion Tool
+Public repository of Creoox &amp; xeokit conversion Tool
 
 ## Compatibility to convert2xkt.js
 https://github.com/xeokit/xeokit-convert
@@ -29,7 +29,7 @@ https://github.com/xeokit/xeokit-convert
 
 
 ## Features include:
--  Extraction of the element tree structure from the IFC model and export as a scene graph, preserving GUIDs to enable metadata linking in XeoKit.
+-  Extraction of the element tree structure from the IFC model and export as a scene graph, preserving GUIDs to enable metadata linking in xeokit.
 
 -  Conversion of all geometric representations from IFC to points, polylines, triangle meshes and text labels for GPU rendering.
 
@@ -51,7 +51,7 @@ https://github.com/xeokit/xeokit-convert
 
 -  Optional visualization of opening elements in IFC models, which are normally not visible in IFC viewers. Enable in input config JSON file.
 
--  Tested for compatibility with XeoKit.
+-  Tested for compatibility with xeokit.
 
 -  Binary version for Windows and Linux and ARM for batch processing of files.
   
