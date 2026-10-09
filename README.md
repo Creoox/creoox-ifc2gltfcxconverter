@@ -1,6 +1,10 @@
 # cxconverter
 Public repository of Creoox &amp; xeokit conversion Tool
 
+## xeoIFC
+A successor to cxconverter is under development: https://github.com/xeofoundry/xeoIfc
+
+
 ## Compatibility to convert2xkt.js
 https://github.com/xeokit/xeokit-convert
 
