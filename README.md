@@ -2,7 +2,30 @@
 Public repository of Creoox &amp; xeokit conversion Tool
 
 ## xeoIFC
-A successor to cxconverter is under development: https://github.com/xeofoundry/xeoIfc
+[xeoIFC](https://github.com/xeofoundry/xeoIFC), the successor to cxconverter, is ready for production. Please use
+xeoIFC instead of cxconverter, for new projects and for existing pipelines. cxconverter is in maintenance mode: it
+gets bug fixes for existing users, no new features.
+
+Switching is simple: the xeoIFC command-line tool reads the same `cxconverter.json` configuration file and keeps the
+cxconverter command-line flags.
+
+|  | cxconverter | xeoIFC |
+| --- | :---: | :---: |
+| IFC to glTF/GLB with xeokit metadata | yes | yes |
+| Geometry quality | good | better |
+| Performance | good | faster, most on large models |
+| XKT export | via convert2xkt.js | direct |
+| Editing of IFC files | no | yes |
+| Writing IFC output | no | yes |
+| Split & merge of IFC files | no | yes |
+| Esri (GIS) export: SLPK / I3S | no | yes |
+| IFC metadata export | JSON | JSON, plus the new [metadata IFC](https://github.com/xeofoundry/xeoIFC/blob/main/converter/README.md#metadata-file-types) format: more complete and true to the source |
+
+Downloads: [xeoIFC releases](https://github.com/xeofoundry/xeoIFC/releases). Try xeoIFC in the browser:
+[live demo](https://xeofoundry.github.io/xeoIFC/). Converter options and configuration:
+[xeoIFC converter](https://github.com/xeofoundry/xeoIFC/blob/main/converter/README.md).
+
+
 
 
 ## Compatibility to convert2xkt.js
